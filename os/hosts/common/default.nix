@@ -21,16 +21,13 @@
   time.timeZone = "America/New_York";
 
   networking = {
-    firewall = {
-      enable = false;
-      allowedTCPPorts = [
-        80 # HTTP
-        443 # HTTPS
-      ];
-      allowedUDPPorts = [
-        53 # DNS
-      ];
-    };
+    useDHCP = false;
+    dhcpcd.enable = false;
+    firewall.enable = false;
+    defaultGateway = "10.100.6.1";
+    nameservers = [
+      "10.100.6.1"
+    ];
   };
 
   users.users = {
