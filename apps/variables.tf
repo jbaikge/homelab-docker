@@ -19,9 +19,10 @@ variable "hosts" {
   }))
 }
 
-variable "service_hosts" {
+variable "apps" {
   description = "Map of services to host keys in the hosts var"
 
   type = object({
+    lego = list(string)
   })
 }
