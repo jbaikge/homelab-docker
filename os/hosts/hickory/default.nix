@@ -3,7 +3,7 @@
     ../common
   ];
 
-  diskio.devices.disk.disk1.device = "/dev/disk/by-id/ata-WDC_WDS100T2B0A-00SM50_205010A00786";
+  # diskio.devices.disk.disk1.device = "/dev/disk/by-id/ata-WDC_WDS100T2B0A-00SM50_205010A00786";
 
   networking = {
     hostName = "hickory";
