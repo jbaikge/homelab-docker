@@ -1,0 +1,28 @@
+upstreams:
+  groups:
+    default:
+      # Cloudflare
+      - 1.1.1.1
+      - 1.0.0.1
+      # Quad9
+      - 9.9.9.9
+      - 149.112.112.112
+
+customDNS:
+  customTTL: 5m
+  mapping:
+    ash.${domain}: ${ash_ip}
+    zwave.${domain}: ${ash_ip}
+    home.${domain}: ${ash_ip}
+
+blocking:
+  denylists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+
+ports:
+  dns: 53
+  http: 4000
