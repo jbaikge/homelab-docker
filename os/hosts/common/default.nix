@@ -44,7 +44,7 @@
 
       isNormalUser = true;
       description = "Jake";
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "docker" "wheel" ];
       initialPassword = "hardwood";
     };
   };
