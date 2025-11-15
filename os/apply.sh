@@ -1,5 +1,7 @@
 #/usr/bin/env bash
 
+set -ex
+
 ACTION="$1"
 
 if [ -z $ACTION ]; then
@@ -14,7 +16,7 @@ HOSTS=(
     maple
 )
 
-if [ "$ACTION" -eq "install" ]; then
+if [ "$ACTION" == "install" ]; then
     for HOST in "${HOSTS[@]}"; do
         nixos-anywhere \
             --flake ".#${HOST}" \
@@ -24,7 +26,7 @@ if [ "$ACTION" -eq "install" ]; then
     done
 fi
 
-if [ "$ACTION" -eq "update" ]; then
+if [ "$ACTION" == "update" ]; then
     for HOST in "${HOSTS[@]}"; do
         nixos-rebuild switch \
             --flake ".#${HOST}" \
