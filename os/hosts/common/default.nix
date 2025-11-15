@@ -33,7 +33,7 @@
   users.users = {
     root = {
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJKcUwPKD4XVY/CD36DrBhlQkUq3AzKaNpfHb0S5ZqQB"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQh27P40G5Z6Dny+pTD8a+kTrGZpYtIU0IcyobhZuDS"
       ];
     };
 
