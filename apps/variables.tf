@@ -24,9 +24,11 @@ variable "apps" {
   description = "Map of services to host keys in the hosts var"
 
   type = object({
-    blocky  = list(string)
-    lego    = list(string)
-    traefik = list(string)
-    unbound = list(string)
+    blocky         = list(string)
+    home_assistant = string
+    lego           = list(string)
+    traefik        = list(string)
+    unbound        = list(string)
+    zwave          = string
   })
 }
