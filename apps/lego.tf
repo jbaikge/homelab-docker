@@ -1,26 +1,26 @@
 resource "docker_image" "lego" {
   for_each     = toset(var.apps.lego)
-  provider     = docker.hosts[each.value]
+  provider     = docker.hosts[each.key]
   name         = "goacme/lego:v4.28.1"
   keep_locally = false
 }
 
 resource "docker_volume" "certificates" {
   for_each = toset(var.apps.lego)
-  provider = docker.hosts[each.value]
+  provider = docker.hosts[each.key]
   name     = "certificates"
   driver   = "local"
 
   driver_opts = {
     type   = "nfs"
-    o      = "addr=${var.hosts[each.value].nfs_host},rw,nfsvers=4"
+    o      = "addr=${var.hosts[each.key].nfs_host},rw,nfsvers=4"
     device = ":/mnt/tank/nfs/vols/certificates"
   }
 }
 
 # resource "docker_container" "lego" {
 #   for_each = toset(var.apps.lego)
-#   provider = docker.hosts[each.value]
+#   provider = docker.hosts[each.key]
 #   name     = "lego"
 #   image    = docker_image.lego[each.key].image_id
 #   must_run = false
