@@ -12,8 +12,11 @@ customDNS:
   customTTL: 5m
   mapping:
     ash.${domain}: ${ash_ip}
-    zwave.${domain}: ${ash_ip}
-    home.${domain}: ${ash_ip}
+    cherry.${domain}: ${cherry_ip}
+    hickory.${domain}: ${hickory_ip}
+    maple.${domain}: ${maple_ip}
+    zwave.${domain}: ${maple_ip}
+    home.${domain}: ${maple_ip}
 
 blocking:
   denylists:
