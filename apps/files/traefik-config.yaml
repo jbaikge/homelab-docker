@@ -1,0 +1,4 @@
+tls:
+  certificates:
+    - certFile: /etc/traefik_certs/certificates/${domain}.crt
+      keyFile: /etc/traefik_certs/certificates/${domain}.key

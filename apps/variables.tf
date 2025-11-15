@@ -16,6 +16,7 @@ variable "hosts" {
   type = map(object({
     provider_host = string
     nfs_host      = string
+    service_ip    = string
   }))
 }
 
@@ -23,6 +24,7 @@ variable "apps" {
   description = "Map of services to host keys in the hosts var"
 
   type = object({
-    lego = list(string)
+    lego    = list(string)
+    traefik = list(string)
   })
 }
