@@ -3,6 +3,8 @@
     ../common
   ];
 
+  diskio.devices.disk.disk1.device = "/dev/disk/by-id/ata-WDC_WDS100T2B0A-00SM50_211050804667";
+
   networking = {
     hostName = "cherry";
     interfaces.enp0s2f0.ipv4.addresses = [
