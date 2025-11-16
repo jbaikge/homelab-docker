@@ -15,6 +15,10 @@ resource "docker_container" "blocky" {
     "TZ=${data.sops_file.secrets.data["timezone"]}",
   ]
 
+  networks_advanced {
+    name = docker_network.blocky[each.key].id
+  }
+
   ports {
     internal = 53
     external = 53
@@ -47,9 +51,7 @@ resource "docker_container" "blocky" {
     read_only      = true
   }
 
-  # TODO figure out how to get this to work later
-
-  # depends_on = [
-  #   docker_container.unbound,
-  # ]
+  depends_on = [
+    docker_container.unbound,
+  ]
 }

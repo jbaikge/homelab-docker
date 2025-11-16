@@ -1,12 +1,16 @@
+bootstrapDns:
+  - upstream: 127.0.0.11
+
 upstreams:
   groups:
     default:
+      - unbound
       # Cloudflare
-      - 1.1.1.1
-      - 1.0.0.1
+      # - 1.1.1.1
+      # - 1.0.0.1
       # Quad9
-      - 9.9.9.9
-      - 149.112.112.112
+      # - 9.9.9.9
+      # - 149.112.112.112
 
 customDNS:
   customTTL: 5m
