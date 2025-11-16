@@ -19,6 +19,7 @@ resource "docker_volume" "home_assistant_config" {
 resource "docker_container" "home_assistant" {
   provider = docker.hosts[var.apps.home_assistant]
   name     = "home-assistant"
+  hostname = "home-assistant"
   image    = docker_image.home_assistant.image_id
 
   labels {
@@ -48,6 +49,10 @@ resource "docker_container" "home_assistant" {
 
   networks_advanced {
     name = docker_network.home_assistant.id
+  }
+
+  networks_advanced {
+    name = docker_network.cloudflared[var.apps.home_assistant].id
   }
 
   volumes {
