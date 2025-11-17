@@ -1,0 +1,127 @@
+# Kanagawa Dark
+theme:
+  background-color: 240 13 14
+  primary-color: 51 33 68
+  negative-color: 358 100 68
+  contrast-multiplier: 1.2
+pages:
+  - name: Home
+    width: wide
+    desktop-navigation-width: wide
+    head-widgets:
+      - type: monitor
+        cache: 1m
+        sites:
+          # - title: BirdNET
+          #   icon: sh:birdnet-analyzer
+          #   url: https://birdnet.${domain}
+          #   check-url: https://birdnet.${domain}
+          - title: Home Assistant
+            icon: sh:home-assistant
+            url: https://home.${domain}
+            check-url: https://home.${domain}
+          # - title: Linkding
+          #   icon: sh:linkding
+          #   url: https://bookmarks.${domain}
+          #   check-url: https://bookmarks.${domain}
+          # - title: Wakapi
+          #   icon: sh:wakapi
+          #   url: https://waka.${domain}
+          #   check-url: https://waka.${domain}
+          - title: ZWave
+            icon: sh:z-wave-js-ui
+            url: https://zwave.${domain}
+            check-url: https://zwave.${domain}
+    columns:
+      - size: small
+        widgets:
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://selfh.st/rss/
+                title: selfh.st
+                limit: 4
+              - url: https://ciechanow.ski/atom.xml
+              - url: https://www.joshwcomeau.com/rss.xml
+                title: Josh Comeau
+              - url: https://samwho.dev/rss.xml
+              - url: https://ishadeed.com/feed.xml
+                title: Ahmad Shadeed
+
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - j_blow
+              - piratesoftware
+              - cohhcarnage
+              - christitustech
+              - EJ_SA
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
+
+          - type: videos
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+              - type: reddit
+                subreddit: selfhosted
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - type: search
+            search-engine: duckduckgo
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+          - type: weather
+            location: Passapatanzy, Virginia, United States
+            units: imperial
+            hour-format: 24h
+            hide-location: true
+
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - glanceapp/glance
+              - go-gitea/gitea
+              - immich-app/immich
+              - syncthing/syncthing
+
+          - type: custom-api
+            title: Steam Specials
+            cache: 12h
+            url: https://store.steampowered.com/api/featuredcategories?cc=us
+            template: |
+              <ul class="list list-gap-10 collapsible-container" data-collapse-after="5">
+              {{ range .JSON.Array "specials.items" }}
+                <li>
+                  <a class="size-h4 color-highlight block text-truncate" href="https://store.steampowered.com/app/{{ .Int "id" }}/">{{ .String "name" }}</a>
+                  <ul class="list-horizontal-text">
+                    <li>{{ div (.Int "final_price" | toFloat) 100 | printf "$%.2f" }}</li>
+                    {{ $discount := .Int "discount_percent" }}
+                    <li{{ if ge $discount 40 }} class="color-positive"{{ end }}>{{ $discount }}% off</li>
+                  </ul>
+                </li>
+              {{ end }}
+              </ul>

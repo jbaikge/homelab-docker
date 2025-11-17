@@ -1,0 +1,55 @@
+resource "docker_image" "glance" {
+  provider     = docker.hosts[var.apps.glance]
+  name         = "glanceapp/glance:v0.8.4"
+  keep_locally = false
+}
+
+resource "docker_container" "glance" {
+  provider = docker.hosts[var.apps.glance]
+  name     = "glance"
+  hostname = "glance"
+  image    = docker_image.glance.image_id
+
+  dns = [
+    for host in var.apps.blocky : var.hosts[host].service_ip
+  ]
+
+  labels {
+    label = "traefik.enable"
+    value = "true"
+  }
+
+  labels {
+    label = "traefik.http.routers.glance.rule"
+    value = "Host(`glance.${data.sops_file.secrets.data["domain.tld"]}`)"
+  }
+
+  labels {
+    label = "traefik.http.routers.glance.entrypoints"
+    value = "websecure"
+  }
+
+  labels {
+    label = "traefik.http.routers.glance.tls"
+    value = "true"
+  }
+
+  labels {
+    label = "traefik.http.services.glance.loadbalancer.server.port"
+    value = "8080"
+  }
+
+  upload {
+    file = "/app/config/glance.yml"
+
+    content = templatefile("${path.module}/files/glance-config.yaml", {
+      domain = data.sops_file.secrets.data["domain.tld"]
+    })
+  }
+
+  volumes {
+    container_path = "/etc/localtime"
+    host_path      = "/etc/localtime"
+    read_only      = true
+  }
+}

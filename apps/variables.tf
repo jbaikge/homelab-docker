@@ -26,6 +26,7 @@ variable "apps" {
   type = object({
     blocky         = list(string)
     cloudflared    = list(string)
+    glance         = string
     home_assistant = string
     lego           = list(string)
     traefik        = list(string)
