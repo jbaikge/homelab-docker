@@ -23,4 +23,12 @@ resource "docker_container" "unbound" {
     ip       = var.hosts[each.key].service_ip
     protocol = "udp"
   }
+
+  upload {
+    file = "/etc/unbound/custom.conf.d/private-domain.conf"
+
+    content = templatefile("${path.module}/files/unbound-config.conf", {
+      private_domain = data.sops_file.secrets.data["cluster.tld"]
+    })
+  }
 }
