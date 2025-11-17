@@ -9,6 +9,7 @@ resource "docker_container" "blocky" {
   for_each = toset(var.apps.blocky)
   provider = docker.hosts[each.key]
   name     = "blocky"
+  hostname = "blocky"
   image    = docker_image.blocky[each.key].image_id
 
   env = [
