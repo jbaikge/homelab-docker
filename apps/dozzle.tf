@@ -4,7 +4,6 @@ resource "docker_image" "dozzle" {
   keep_locally = false
 }
 
-# docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle:latest
 resource "docker_container" "dozzle" {
   provider = docker.hosts[var.apps.dozzle]
   name     = "dozzle"
