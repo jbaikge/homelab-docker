@@ -1,0 +1,52 @@
+resource "docker_image" "dozzle" {
+  provider     = docker.hosts[var.apps.dozzle]
+  name         = "ghcr.io/amir20/dozzle:v8.14.8"
+  keep_locally = false
+}
+
+# docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 amir20/dozzle:latest
+resource "docker_container" "dozzle" {
+  provider = docker.hosts[var.apps.dozzle]
+  name     = "dozzle"
+  image    = docker_image.dozzle.image_id
+
+  env = [
+  ]
+
+  labels {
+    label = "traefik.enable"
+    value = "true"
+  }
+
+  labels {
+    label = "traefik.http.routers.dozzle.rule"
+    value = "Host(`dozzle.${data.sops_file.secrets.data["domain.tld"]}`)"
+  }
+
+  labels {
+    label = "traefik.http.routers.dozzle.entrypoints"
+    value = "websecure"
+  }
+
+  labels {
+    label = "traefik.http.routers.dozzle.tls"
+    value = "true"
+  }
+
+  labels {
+    label = "traefik.http.services.dozzle.loadbalancer.server.port"
+    value = "8080"
+  }
+
+  volumes {
+    container_path = "/etc/localtime"
+    host_path      = "/etc/localtime"
+    read_only      = true
+  }
+
+  volumes {
+    container_path = "/var/run/docker.sock"
+    host_path      = "/var/run/docker.sock"
+    read_only      = true
+  }
+}

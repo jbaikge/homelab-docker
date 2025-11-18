@@ -18,6 +18,7 @@ customDNS:
     ash.${domain}: ${ash_ip}
     cherry.${domain}: ${cherry_ip}
     hickory.${domain}: ${hickory_ip}
+    dozzle.${domain}: ${hickory_ip}
     glance.${domain}: ${hickory_ip}
     maple.${domain}: ${maple_ip}
     zwave.${domain}: ${maple_ip}
