@@ -24,10 +24,10 @@ pages:
             icon: sh:home-assistant
             url: https://home.${domain}
             check-url: https://home.${domain}
-          # - title: Linkding
-          #   icon: sh:linkding
-          #   url: https://bookmarks.${domain}
-          #   check-url: https://bookmarks.${domain}
+          - title: Linkding
+            icon: sh:linkding
+            url: https://bookmarks.${domain}
+            check-url: https://bookmarks.${domain}
           # - title: Wakapi
           #   icon: sh:wakapi
           #   url: https://waka.${domain}
