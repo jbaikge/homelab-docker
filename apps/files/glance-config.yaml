@@ -16,6 +16,10 @@ pages:
           #   icon: sh:birdnet-analyzer
           #   url: https://birdnet.${domain}
           #   check-url: https://birdnet.${domain}
+          - title: Dozzle
+            icon: sh:dozzle
+            url: https://logs.${domain}
+            check-url: https://logs.${domain}
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
