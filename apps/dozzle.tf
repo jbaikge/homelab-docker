@@ -10,6 +10,7 @@ resource "docker_container" "dozzle" {
   image    = docker_image.dozzle.image_id
 
   env = [
+    format("DOZZLE_REMOTE_AGENT=%s", join(",", [for v in var.apps.dozzle_agent : "${var.hosts[v].service_ip}:7007"]))
   ]
 
   labels {
@@ -19,7 +20,7 @@ resource "docker_container" "dozzle" {
 
   labels {
     label = "traefik.http.routers.dozzle.rule"
-    value = "Host(`dozzle.${data.sops_file.secrets.data["domain.tld"]}`)"
+    value = "Host(`logs.${data.sops_file.secrets.data["domain.tld"]}`)"
   }
 
   labels {
