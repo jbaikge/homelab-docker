@@ -31,6 +31,7 @@ variable "apps" {
     glance         = string
     home_assistant = string
     lego           = list(string)
+    linkding       = string
     traefik        = list(string)
     unbound        = list(string)
     zwave          = string
