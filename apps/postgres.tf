@@ -23,7 +23,7 @@ resource "docker_container" "postgres" {
   image    = docker_image.postgres.image_id
 
   env = [
-    "POSTGRES_PASSWORD=${sops_file.secrets.data["postgres.password"]}",
+    "POSTGRES_PASSWORD=${data.sops_file.secrets.data["postgres.password"]}",
   ]
 
   networks_advanced {
@@ -35,6 +35,12 @@ resource "docker_container" "postgres" {
     external = 5432
     ip       = var.hosts[var.apps.postgres].service_ip
     protocol = "tcp"
+  }
+
+  volumes {
+    container_path = "/etc/localtime"
+    host_path      = "/etc/localtime"
+    read_only      = true
   }
 
   volumes {
