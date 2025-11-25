@@ -5,26 +5,24 @@ upstreams:
   groups:
     default:
       - unbound
-      # Cloudflare
-      # - 1.1.1.1
-      # - 1.0.0.1
-      # Quad9
-      # - 9.9.9.9
-      # - 149.112.112.112
 
 customDNS:
   customTTL: 5m
   mapping:
     ash.${domain}: ${ash_ip}
+    birds.${domain}: ${hickory_ip}
     bookmarks.${domain}: ${hickory_ip}
     cherry.${domain}: ${cherry_ip}
     db.${domain}: ${ash_ip}
+    docs.${domain}: ${cherry_ip}
     glance.${domain}: ${hickory_ip}
     hickory.${domain}: ${hickory_ip}
     home.${domain}: ${maple_ip}
     logs.${domain}: ${hickory_ip}
     maple.${domain}: ${maple_ip}
+    pdf.${domain}: ${hickory_ip}
     rss.${domain}: ${hickory_ip}
+    waka.${domain}: ${hickory_ip}
     zwave.${domain}: ${maple_ip}
 
 blocking:
