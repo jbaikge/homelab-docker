@@ -7,6 +7,7 @@ resource "docker_image" "miniflux" {
 resource "docker_container" "miniflux" {
   provider = docker.hosts[var.apps.miniflux]
   name     = "miniflux"
+  hostname = "miniflux"
   image    = docker_image.miniflux.image_id
 
   env = [
@@ -40,6 +41,10 @@ resource "docker_container" "miniflux" {
   labels {
     label = "traefik.http.services.miniflux.loadbalancer.server.port"
     value = "8080"
+  }
+
+  networks_advanced {
+    name = docker_network.cloudflared[var.apps.miniflux].id
   }
 
   volumes {
