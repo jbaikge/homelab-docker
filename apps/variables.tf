@@ -24,6 +24,7 @@ variable "apps" {
   description = "Map of services to host keys in the hosts var"
 
   type = object({
+    adminer        = string
     blocky         = list(string)
     cloudflared    = list(string)
     dozzle         = string
@@ -32,6 +33,11 @@ variable "apps" {
     home_assistant = string
     lego           = list(string)
     linkding       = string
+    miniflux       = string
+    mysql          = string
+    postgres       = string
+    prometheus     = string
+    redis          = string
     traefik        = list(string)
     unbound        = list(string)
     zwave          = string
