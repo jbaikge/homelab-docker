@@ -15,6 +15,7 @@ customDNS:
     cherry.${domain}: ${cherry_ip}
     db.${domain}: ${ash_ip}
     docs.${domain}: ${cherry_ip}
+    git.${domain}: ${hickory_ip}
     glance.${domain}: ${hickory_ip}
     hickory.${domain}: ${hickory_ip}
     home.${domain}: ${maple_ip}
