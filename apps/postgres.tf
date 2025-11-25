@@ -11,7 +11,7 @@ resource "docker_volume" "postgres" {
 
   driver_opts = {
     type   = "nfs"
-    o      = "addr=${var.hosts[var.apps.postgres].nfs_host},defaults,nfsvers=4,suid,rw,timeo=600,retrans=2,hard,fg,rsize=8192,wsize=8192,noatime,acregmin=0,acregmax=0,acdirmin=0,acdirmax=0"
+    o      = "addr=${var.hosts[var.apps.postgres].nfs_host},rw,nfsvers=4"
     device = ":/mnt/tank/nfs/vols/postgres"
   }
 }
