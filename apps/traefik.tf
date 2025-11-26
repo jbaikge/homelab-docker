@@ -26,6 +26,7 @@ resource "docker_container" "traefik" {
 
   command = [
     # Entrypoints
+    "--entrypoints.ssh.address=:22",
     "--entrypoints.web.address=:80",
     "--entrypoints.web.http.redirections.entrypoint.to=websecure",
     "--entrypoints.web.http.redirections.entrypoint.scheme=https",
