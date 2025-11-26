@@ -13,7 +13,7 @@ resource "docker_container" "blocky" {
   image    = docker_image.blocky[each.key].image_id
 
   env = [
-    "TZ=${data.sops_file.secrets.data["timezone"]}",
+    "TZ=${data.sops_file.secrets.data["location.timezone"]}",
   ]
 
   networks_advanced {

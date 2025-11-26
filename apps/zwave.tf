@@ -23,7 +23,7 @@ resource "docker_container" "zwave" {
   image    = docker_image.zwave.image_id
 
   env = [
-    "TZ=${data.sops_file.secrets.data["timezone"]}",
+    "TZ=${data.sops_file.secrets.data["location.timezone"]}",
   ]
 
   devices {
