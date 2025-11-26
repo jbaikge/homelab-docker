@@ -30,6 +30,7 @@ variable "apps" {
     cloudflared    = list(string)
     dozzle         = string
     dozzle_agent   = list(string)
+    forgejo        = string
     glance         = string
     home_assistant = string
     lego           = list(string)
