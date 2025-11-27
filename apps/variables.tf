@@ -42,6 +42,7 @@ variable "apps" {
     redis          = string
     traefik        = list(string)
     unbound        = list(string)
+    wakapi         = string
     zwave          = string
   })
 }
