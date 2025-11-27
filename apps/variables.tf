@@ -26,6 +26,7 @@ variable "apps" {
   type = object({
     adminer        = string
     bentopdf       = string
+    birdnet_go     = string
     blocky         = list(string)
     cloudflared    = list(string)
     dozzle         = string
