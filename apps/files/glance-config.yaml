@@ -12,30 +12,36 @@ pages:
       - type: monitor
         cache: 1m
         sites:
-          # - title: BirdNET
-          #   icon: sh:birdnet-analyzer
-          #   url: https://birdnet.${domain}
-          #   check-url: https://birdnet.${domain}
+          - title: Adminer
+            icon: sh:adminer
+            url: https://db.${domain}
+          - title: BentoPDF
+            icon: sh:bentopdf
+            url: https://pdf.${domain}
+          - title: BirdNET
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/birdnet.png
+            url: https://birds.${domain}
           - title: Dozzle
             icon: sh:dozzle
             url: https://logs.${domain}
-            check-url: https://logs.${domain}
+          - title: Forgejo
+            icon: sh:forgejo
+            url: https://git.${domain}
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
-            check-url: https://home.${domain}
           - title: Linkding
             icon: sh:linkding
             url: https://bookmarks.${domain}
-            check-url: https://bookmarks.${domain}
-          # - title: Wakapi
-          #   icon: sh:wakapi
-          #   url: https://waka.${domain}
-          #   check-url: https://waka.${domain}
+          - title: Miniflux
+            icon: sh:miniflux
+            url: https://rss.${domain}
+          - title: Wakapi
+            icon: sh:wakapi
+            url: https://waka.${domain}
           - title: ZWave
             icon: sh:z-wave-js-ui
             url: https://zwave.${domain}
-            check-url: https://zwave.${domain}
     columns:
       - size: small
         widgets:
@@ -100,17 +106,6 @@ pages:
             units: imperial
             hour-format: 24h
             hide-location: true
-
-          - type: releases
-            cache: 1d
-            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-            # read-only token from your Github account settings and use it here to increase the limit.
-            # token: ...
-            repositories:
-              - glanceapp/glance
-              - go-gitea/gitea
-              - immich-app/immich
-              - syncthing/syncthing
 
           - type: custom-api
             title: Steam Specials
