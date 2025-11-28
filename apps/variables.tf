@@ -33,6 +33,7 @@ variable "apps" {
     dozzle_agent   = list(string)
     forgejo        = string
     glance         = string
+    gotenberg      = string
     home_assistant = string
     lego           = list(string)
     linkding       = string
@@ -43,6 +44,7 @@ variable "apps" {
     prometheus     = string
     redis          = string
     sftp           = string
+    tika           = string
     traefik        = list(string)
     unbound        = list(string)
     wakapi         = string
