@@ -1,7 +1,7 @@
 resource "docker_image" "dozzle_agent" {
   for_each     = toset(var.apps.dozzle_agent)
   provider     = docker.hosts[each.key]
-  name         = "ghcr.io/amir20/dozzle:v8.14.8"
+  name         = "ghcr.io/amir20/dozzle:${local.dozzle.version}"
   keep_locally = false
 }
 

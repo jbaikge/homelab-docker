@@ -1,6 +1,11 @@
+locals {
+  dozzle = {
+    version = "v8.14.9"
+  }
+}
 resource "docker_image" "dozzle" {
   provider     = docker.hosts[var.apps.dozzle]
-  name         = "ghcr.io/amir20/dozzle:v8.14.8"
+  name         = "ghcr.io/amir20/dozzle:${local.dozzle.version}"
   keep_locally = false
 }
 
