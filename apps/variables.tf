@@ -38,9 +38,11 @@ variable "apps" {
     linkding       = string
     miniflux       = string
     mysql          = string
+    paperless_ngx  = string
     postgres       = string
     prometheus     = string
     redis          = string
+    sftp           = string
     traefik        = list(string)
     unbound        = list(string)
     wakapi         = string
