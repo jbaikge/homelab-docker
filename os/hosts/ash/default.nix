@@ -26,4 +26,9 @@
       }
     ];
   };
+
+  services.openssh.listenAddresses = [{
+    addr = "10.100.6.40";
+    port = 22;
+  }];
 }
