@@ -18,6 +18,11 @@ resource "docker_container" "sftp" {
   ]
 
   labels {
+    label = "traefik.enable"
+    value = "true"
+  }
+
+  labels {
     label = "traefik.tcp.routers.sftp.rule"
     value = "HostSNI(`*`)"
   }
