@@ -48,6 +48,18 @@ resource "docker_container" "sftp" {
   }
 
   upload {
+    file       = "/etc/sftp.d/legacy_algos"
+    executable = true
+
+    content = <<-EOT
+      #!/bin/sh
+      echo "KexAlgorithms +diffie-hellman-group1-sha1" >> /etc/ssh/sshd_config
+      echo "HostKeyAlgorithms +ssh-rsa,ssh-dss" >> /etc/ssh/sshd_config
+      echo "PubkeyAcceptedKeyTypes +ssh-rsa,ssh-dss" >> /etc/ssh/sshd_config
+      EOT
+  }
+
+  upload {
     file    = "/home/scanner/.ssh/keys/id_rsa.pub"
     content = data.sops_file.secrets.data["sftp.user_keys.scanner"]
   }
