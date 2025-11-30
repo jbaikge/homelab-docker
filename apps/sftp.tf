@@ -47,6 +47,11 @@ resource "docker_container" "sftp" {
     content = data.sops_file.secrets.data["sftp.host_keys.rsa"]
   }
 
+  upload {
+    file    = "/home/scanner/.ssh/keys/id_rsa.pub"
+    content = data.sops_file.secrets.data["sftp.user_keys.scanner"]
+  }
+
   volumes {
     container_path = "/home/scanner/upload"
     volume_name    = docker_volume.paperless_ngx["consume"].name
