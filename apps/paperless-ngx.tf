@@ -1,5 +1,6 @@
 locals {
   paperless_ngx = {
+    version = "2.20.0"
     volumes = [
       "consume",
       "data",
@@ -11,7 +12,7 @@ locals {
 
 resource "docker_image" "paperless_ngx" {
   provider     = docker.hosts[var.apps.paperless_ngx]
-  name         = "ghcr.io/paperless-ngx/paperless-ngx:2.20.0"
+  name         = "ghcr.io/paperless-ngx/paperless-ngx:${local.paperless_ngx.version}"
   keep_locally = false
 }
 
