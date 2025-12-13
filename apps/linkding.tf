@@ -1,6 +1,6 @@
 resource "docker_image" "linkding" {
   provider     = docker.hosts[var.apps.linkding]
-  name         = "ghcr.io/sissbruecker/linkding:1.44.1-plus"
+  name         = "ghcr.io/sissbruecker/linkding:1.44.2-plus"
   keep_locally = false
 }
 
