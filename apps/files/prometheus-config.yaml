@@ -1,0 +1,12 @@
+scrape_configs:
+  - job_name: "hass"
+    scrape_interval: 60s
+    metrics_path: /api/prometheus
+
+    authorization:
+      credentials: "${home_assistant_token}"
+
+    scheme: https
+    static_configs:
+      - targets:
+          - "${home_assistant_url}"
