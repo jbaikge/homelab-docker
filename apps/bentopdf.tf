@@ -1,6 +1,6 @@
 resource "docker_image" "bentopdf" {
   provider     = docker.hosts[var.apps.bentopdf]
-  name         = "ghcr.io/alam00000/bentopdf:v1.11.1"
+  name         = "ghcr.io/alam00000/bentopdf:v1.14.0"
   keep_locally = false
 }
 
