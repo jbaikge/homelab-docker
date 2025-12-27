@@ -22,6 +22,7 @@ customDNS:
     logs.${domain}: ${hickory_ip}
     maple.${domain}: ${maple_ip}
     pdf.${domain}: ${hickory_ip}
+    prometheus.${domain}: ${ash_ip}
     rss.${domain}: ${hickory_ip}
     waka.${domain}: ${hickory_ip}
     zwave.${domain}: ${maple_ip}
