@@ -24,6 +24,7 @@ resource "docker_container" "wakapi" {
   env = [
     "WAKAPI_PASSWORD_SALT=${data.sops_file.secrets.data["wakapi.password_salt"]}",
     "WAKAPI_PUBLIC_URL=https://waka.${data.sops_file.secrets.data["domain.tld"]}",
+    "WAKAPI_EXPOSE_METRICS=true",
   ]
 
   labels {

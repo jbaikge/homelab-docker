@@ -61,6 +61,10 @@ resource "docker_container" "prometheus" {
     content = templatefile("${path.module}/files/prometheus-config.yaml", {
       home_assistant_token = data.sops_file.secrets.data["prometheus.hass.token"]
       home_assistant_url   = data.sops_file.secrets.data["prometheus.hass.url"]
+      waka_personal_token  = data.sops_file.secrets.data["prometheus.waka_personal.token"]
+      waka_personal_url    = data.sops_file.secrets.data["prometheus.waka_personal.url"]
+      waka_work_token      = data.sops_file.secrets.data["prometheus.waka_work.token"]
+      waka_work_url        = data.sops_file.secrets.data["prometheus.waka_work.url"]
     })
   }
 
