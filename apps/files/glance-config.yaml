@@ -36,6 +36,12 @@ pages:
           - title: Miniflux
             icon: sh:miniflux
             url: https://rss.${domain}
+          - title: Paperless
+            icon: sh:paperless-ngx
+            url: https://docs.${domain}
+          - title: Prometheus
+            icon: sh:prometheus
+            url: https://prometheus.${domain}
           - title: Wakapi
             icon: sh:wakapi
             url: https://waka.${domain}
