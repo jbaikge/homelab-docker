@@ -1,6 +1,6 @@
 resource "docker_image" "zwave" {
   provider     = docker.hosts[var.apps.zwave]
-  name         = "zwavejs/zwave-js-ui:11.7.0"
+  name         = "zwavejs/zwave-js-ui:11.10.1"
   keep_locally = false
 }
 
