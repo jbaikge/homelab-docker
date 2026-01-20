@@ -1,7 +1,7 @@
 resource "docker_image" "cloudflared" {
   for_each     = toset(var.apps.cloudflared)
   provider     = docker.hosts[each.key]
-  name         = "cloudflare/cloudflared:2026.1.0"
+  name         = "cloudflare/cloudflared:2025.11.1"
   keep_locally = false
 }
 
