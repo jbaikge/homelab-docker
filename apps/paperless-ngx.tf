@@ -45,6 +45,7 @@ resource "docker_container" "paperless_ngx" {
     "PAPERLESS_DBPASS=${data.sops_file.secrets.data["paperless.db.password"]}",
     "PAPERLESS_DBUSER=${data.sops_file.secrets.data["paperless.db.username"]}",
     # "PAPERLESS_MEDIA_ROOT=/srv/media",
+    "PAPERLESS_OCR_USER_ARGS={\"continue_on_soft_render_error\": true}",
     "PAPERLESS_REDIS=redis://${var.hosts[var.apps.redis].service_ip}:6379",
     "PAPERLESS_REDIS_PREFIX=paperless",
     "PAPERLESS_TIKA_ENABLED=1",
