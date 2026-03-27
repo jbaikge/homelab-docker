@@ -27,6 +27,11 @@ customDNS:
     waka.${domain}: ${hickory_ip}
     zwave.${domain}: ${maple_ip}
 
+conditional:
+  fallbackUpstream: false
+  mapping:
+    lan: 10.100.6.1
+
 blocking:
   denylists:
     ads:
