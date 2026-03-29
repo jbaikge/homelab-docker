@@ -1,6 +1,6 @@
 locals {
   paperless_ngx = {
-    version = "2.20.9"
+    version = "2.20.13"
     volumes = [
       "consume",
       "data",
