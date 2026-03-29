@@ -39,6 +39,7 @@ variable "apps" {
     linkding       = string
     miniflux       = string
     mysql          = string
+    openspeedtest  = string
     paperless_ngx  = string
     postgres       = string
     prometheus     = string

@@ -36,6 +36,9 @@ pages:
           - title: Miniflux
             icon: sh:miniflux
             url: https://rss.${domain}
+          - title: Open Speed Test
+            icon: sh:openspeedtest
+            url: https://speed.${domain}
           - title: Paperless
             icon: sh:paperless-ngx
             url: https://docs.${domain}

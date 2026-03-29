@@ -24,6 +24,7 @@ customDNS:
     pdf.${domain}: ${hickory_ip}
     prometheus.${domain}: ${ash_ip}
     rss.${domain}: ${hickory_ip}
+    speed.${domain}: ${hickory_ip}
     waka.${domain}: ${hickory_ip}
     zwave.${domain}: ${maple_ip}
 
