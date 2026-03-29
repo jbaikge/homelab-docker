@@ -45,6 +45,26 @@ pages:
           - title: Prometheus
             icon: sh:prometheus
             url: https://prometheus.${domain}
+          - title: Traefik (Ash)
+            icon: sh:traefik
+            url: https://ash.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Cherry)
+            icon: sh:traefik
+            url: https://cherry.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Hickory)
+            icon: sh:traefik
+            url: https://hickory.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Maple)
+            icon: sh:traefik
+            url: https://maple.${domain}
+            alt-status-codes:
+              - 401
           - title: Wakapi
             icon: sh:wakapi
             url: https://waka.${domain}
