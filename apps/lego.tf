@@ -1,7 +1,7 @@
 resource "docker_image" "lego" {
   for_each     = toset(var.apps.lego)
   provider     = docker.hosts[each.key]
-  name         = "goacme/lego:v4.28.1"
+  name         = "goacme/lego:v4.33.0"
   keep_locally = false
 }
 
