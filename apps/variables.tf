@@ -40,6 +40,7 @@ variable "apps" {
     linkding       = string
     miniflux       = string
     mysql          = string
+    omni_tools     = string
     openspeedtest  = string
     paperless_ngx  = string
     postgres       = string

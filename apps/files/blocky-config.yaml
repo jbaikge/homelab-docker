@@ -22,6 +22,7 @@ customDNS:
     logs.${domain}: ${hickory_ip}
     librespeed.${domain}: ${hickory_ip}
     maple.${domain}: ${maple_ip}
+    omni-tools.${domain}: ${hickory_ip}
     openspeed.${domain}: ${hickory_ip}
     pdf.${domain}: ${hickory_ip}
     prometheus.${domain}: ${ash_ip}

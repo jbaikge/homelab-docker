@@ -39,6 +39,9 @@ pages:
           - title: Miniflux
             icon: sh:miniflux
             url: https://rss.${domain}
+          - title: Omni Tools
+            icon: sh:omnitools
+            url: https://omni-tools.${domain}
           - title: Open Speed Test
             icon: sh:openspeedtest
             url: https://openspeed.${domain}
