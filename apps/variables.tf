@@ -36,6 +36,7 @@ variable "apps" {
     gotenberg      = string
     home_assistant = string
     lego           = list(string)
+    librespeed     = string
     linkding       = string
     miniflux       = string
     mysql          = string

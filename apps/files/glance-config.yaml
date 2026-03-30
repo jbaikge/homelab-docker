@@ -30,6 +30,9 @@ pages:
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
+          - title: Libre Speed
+            icon: sh:librespeed
+            url: https://librespeed.${domain}
           - title: Linkding
             icon: sh:linkding
             url: https://bookmarks.${domain}
@@ -38,7 +41,7 @@ pages:
             url: https://rss.${domain}
           - title: Open Speed Test
             icon: sh:openspeedtest
-            url: https://speed.${domain}
+            url: https://openspeed.${domain}
           - title: Paperless
             icon: sh:paperless-ngx
             url: https://docs.${domain}

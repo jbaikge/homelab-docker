@@ -18,7 +18,7 @@ resource "docker_container" "openspeedtest" {
 
   labels {
     label = "traefik.http.routers.openspeedtest.rule"
-    value = "Host(`speed.${data.sops_file.secrets.data["domain.tld"]}`)"
+    value = "Host(`openspeed.${data.sops_file.secrets.data["domain.tld"]}`)"
   }
 
   labels {
