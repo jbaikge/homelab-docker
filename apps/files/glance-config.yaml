@@ -30,6 +30,9 @@ pages:
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
+          - title: IT Tools
+            icon: sh:it-tools
+            url: https://it-tools.${domain}
           - title: Libre Speed
             icon: sh:librespeed
             url: https://librespeed.${domain}
