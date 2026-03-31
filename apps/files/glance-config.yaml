@@ -30,6 +30,9 @@ pages:
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
+          - title: Homebox
+            icon: sh:homebox
+            url: https://homebox.${domain}
           - title: IT Tools
             icon: sh:it-tools
             url: https://it-tools.${domain}

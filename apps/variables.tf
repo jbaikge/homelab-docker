@@ -35,6 +35,7 @@ variable "apps" {
     glance         = string
     gotenberg      = string
     home_assistant = string
+    homebox        = string
     it_tools       = string
     lego           = list(string)
     librespeed     = string
