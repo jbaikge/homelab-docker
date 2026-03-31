@@ -1,6 +1,6 @@
 resource "docker_image" "gotenberg" {
   provider     = docker.hosts[var.apps.gotenberg]
-  name         = "docker.io/gotenberg/gotenberg:8.29.0"
+  name         = "docker.io/gotenberg/gotenberg:8.29.1"
   keep_locally = false
 }
 
