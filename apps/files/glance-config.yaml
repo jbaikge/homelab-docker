@@ -21,6 +21,9 @@ pages:
           - title: BirdNET
             icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/birdnet.png
             url: https://birds.${domain}
+          - title: Databasus
+            icon: sh:databasus
+            url: https://databasus.${domain}
           - title: Dozzle
             icon: sh:dozzle
             url: https://logs.${domain}

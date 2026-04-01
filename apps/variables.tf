@@ -29,6 +29,7 @@ variable "apps" {
     birdnet_go     = string
     blocky         = list(string)
     cloudflared    = list(string)
+    databasus      = string
     dozzle         = string
     dozzle_agent   = list(string)
     forgejo        = string
