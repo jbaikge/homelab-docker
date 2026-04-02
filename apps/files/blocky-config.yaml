@@ -42,9 +42,15 @@ blocking:
   denylists:
     ads:
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+    family:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social-only/hosts
   clientGroupsBlock:
     default:
       - ads
+    10.100.3.1/24:
+      - family
 
 ports:
   dns: 53
