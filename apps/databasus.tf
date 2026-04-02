@@ -50,6 +50,10 @@ resource "docker_container" "databasus" {
     value = "4005"
   }
 
+  networks_advanced {
+    name = docker_network.database.id
+  }
+
   volumes {
     container_path = "/etc/localtime"
     host_path      = "/etc/localtime"
