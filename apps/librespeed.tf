@@ -34,13 +34,10 @@ resource "docker_container" "librespeed" {
     value = "8080"
   }
 
-  labels {
-    label = "traefik.http.routers.librespeed.middlewares"
-    value = "limit"
-  }
-
-  labels {
-    label = "traefik.http.middlewares.limit.buffering.maxRequestBodyBytes"
-    value = "10000000000"
+  ports {
+    internal = 8080
+    external = 16384
+    ip       = var.hosts[var.apps.librespeed].service_ip
+    protocol = "tcp"
   }
 }

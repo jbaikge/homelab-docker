@@ -41,7 +41,7 @@ pages:
             url: https://it-tools.${domain}
           - title: Libre Speed
             icon: sh:librespeed
-            url: https://librespeed.${domain}
+            url: http://librespeed.${domain}:16384
           - title: Linkding
             icon: sh:linkding
             url: https://bookmarks.${domain}
@@ -53,7 +53,7 @@ pages:
             url: https://omni-tools.${domain}
           - title: Open Speed Test
             icon: sh:openspeedtest
-            url: https://openspeed.${domain}
+            url: http://openspeed.${domain}:16385
           - title: Paperless
             icon: sh:paperless-ngx
             url: https://docs.${domain}

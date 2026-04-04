@@ -43,6 +43,13 @@ resource "docker_container" "openspeedtest" {
 
   labels {
     label = "traefik.http.middlewares.limit.buffering.maxRequestBodyBytes"
-    value = "10000000000"
+    value = tostring(35 * 1024 * 1024)
+  }
+
+  ports {
+    internal = 3000
+    external = 16385
+    ip       = var.hosts[var.apps.openspeedtest].service_ip
+    protocol = "tcp"
   }
 }
