@@ -31,6 +31,7 @@ resource "docker_container" "traefik" {
     "--entrypoints.web.http.redirections.entrypoint.to=websecure",
     "--entrypoints.web.http.redirections.entrypoint.scheme=https",
     "--entrypoints.web.http.redirections.entrypoint.permanent=true",
+    "--entrypoints.web.http.redirections.entrypoint.priority=2147483645", # 32-bit maxint - 2
     "--entrypoints.websecure.address=:443",
     "--entrypoints.websecure.http.tls=true",
 
