@@ -1,6 +1,6 @@
 resource "docker_image" "birdnet_go" {
   provider     = docker.hosts[var.apps.birdnet_go]
-  name         = "ghcr.io/tphakala/birdnet-go:nightly-20251028"
+  name         = "ghcr.io/tphakala/birdnet-go:nightly-20260322"
   keep_locally = false
 }
 
