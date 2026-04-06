@@ -4,15 +4,27 @@ resource "docker_image" "birdnet_go" {
   keep_locally = false
 }
 
-resource "docker_volume" "birdnet_go" {
+resource "docker_volume" "birdnet_go_config" {
   provider = docker.hosts[var.apps.birdnet_go]
-  name     = "birdnet_go"
+  name     = "birdnet_go_config"
   driver   = "local"
 
   driver_opts = {
     type   = "nfs"
     o      = "addr=${var.hosts[var.apps.birdnet_go].nfs_host},hard,timeo=10,retry=10,vers=4.1"
-    device = ":/mnt/tank/nfs/vols/birdnet_go"
+    device = ":/mnt/tank/nfs/vols/birdnet_go/config"
+  }
+}
+
+resource "docker_volume" "birdnet_go_data" {
+  provider = docker.hosts[var.apps.birdnet_go]
+  name     = "birdnet_go_data"
+  driver   = "local"
+
+  driver_opts = {
+    type   = "nfs"
+    o      = "addr=${var.hosts[var.apps.birdnet_go].nfs_host},hard,timeo=10,retry=10,vers=4.1"
+    device = ":/mnt/tank/nfs/vols/birdnet_go/data"
   }
 }
 
@@ -53,8 +65,14 @@ resource "docker_container" "birdnet_go" {
   }
 
   volumes {
+    container_path = "/config"
+    volume_name    = docker_volume.birdnet_go_config.name
+    read_only      = false
+  }
+
+  volumes {
     container_path = "/data"
-    volume_name    = docker_volume.birdnet_go.name
+    volume_name    = docker_volume.birdnet_go_data.name
     read_only      = false
   }
 }
