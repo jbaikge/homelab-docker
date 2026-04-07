@@ -1,6 +1,6 @@
 locals {
   dozzle = {
-    version = "v10.2.1"
+    version = "v10.3.0"
   }
 }
 resource "docker_image" "dozzle" {
