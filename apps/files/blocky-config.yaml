@@ -56,3 +56,9 @@ blocking:
 ports:
   dns: 53
   http: 4000
+
+log:
+  level: info
+  format: json
+  timestamp: true
+  privacy: false
