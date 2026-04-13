@@ -41,9 +41,11 @@ conditional:
 blocking:
   denylists:
     ads:
-      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
-      - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+      # - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      # - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      # - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.txt
+      # - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.txt
     family:
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social-only/hosts
   clientGroupsBlock:
