@@ -43,6 +43,7 @@ resource "docker_container" "blocky" {
       cherry_ip  = var.hosts["cherry"].service_ip
       hickory_ip = var.hosts["hickory"].service_ip
       maple_ip   = var.hosts["maple"].service_ip
+      oak_ip     = var.hosts["oak"].service_ip
     })
   }
 
