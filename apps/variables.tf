@@ -57,3 +57,9 @@ variable "apps" {
     zwave          = string
   })
 }
+
+variable "oak_ip" {
+  description = "Oak service IP"
+
+  type = string
+}

@@ -22,7 +22,7 @@ customDNS:
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${hickory_ip}
     it-tools.${domain}: ${hickory_ip}
-    logs.${domain}: ${hickory_ip}
+    logs.${domain}: ${oak_ip}
     librespeed.${domain}: ${hickory_ip}
     maple.${domain}: ${maple_ip}
     oak.${domain}: ${oak_ip}
