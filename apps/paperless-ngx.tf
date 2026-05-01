@@ -1,6 +1,6 @@
 locals {
   paperless_ngx = {
-    version = "2.20.13"
+    version = "2.20.15"
     volumes = [
       "consume",
       "data",
@@ -32,6 +32,7 @@ resource "docker_volume" "paperless_ngx" {
 resource "docker_container" "paperless_ngx" {
   provider = docker.hosts[var.apps.paperless_ngx]
   name     = "paperless-ngx"
+  hostname = "paperless-ngx"
   image    = docker_image.paperless_ngx.image_id
 
   env = [
