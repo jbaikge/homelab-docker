@@ -1,6 +1,6 @@
 resource "docker_image" "forgejo" {
   provider     = docker.hosts[var.apps.forgejo]
-  name         = "codeberg.org/forgejo/forgejo:14.0.3"
+  name         = "codeberg.org/forgejo/forgejo:15.0.1"
   keep_locally = false
 }
 
